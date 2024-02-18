@@ -49,8 +49,9 @@ def add_contact(name, phone, comment='-'):
 
 
 
-def find_contact(name=None, phone=None, comment=None, contact_only=True):
-    with open ('phone book.txt', 'r', encoding='utf-8') as contacts:
+def find_contact(name=None, phone=None, comment=None,
+                 contact_only=True, path='phone book.txt'):
+    with open (path, 'r', encoding='utf-8') as contacts:
         contacts = get_list_of_list_contacts(contacts)
         for contact_index in range(len(contacts)-1):
             current_contact = contacts[contact_index]
@@ -101,3 +102,10 @@ def inputing():
     phone = input('Введите номер телефона: ')
     comment = input('Введите комментарий: ')
     return (name, phone, comment)
+
+
+
+
+def copying_from_another(whence, name=None, phone=None, comment=None):
+    copyable_contact = find_contact(name, phone, comment, True, whence)
+    print(copyable_contact)
