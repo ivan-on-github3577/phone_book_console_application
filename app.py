@@ -20,15 +20,18 @@ while operation != 'в':
         print(*find_contact(who_need[0], who_need[1], who_need[2]))
     elif operation == 'и':
         print('Кого изменить?\nПостарайтесь написать в точности как в справочнике.')
+        print('Если не знаете или хотите пропустить пункт ввода - введите пробел.')
         who_need = inputing()
         print(f'Введите новые данные для контакта {who_need[0]}.')
         who_will = inputing()
+        replace_spaces_with_none(who_need)
         edit_contact(who_need[0], who_need[1], who_need[2],
                      who_will[0], who_will[1], who_will[2])
     elif operation == 'у':
         print('Кого удалить?\nПостарайтесь написать имя в точности как в справочнике.')
-        who_need = input('Введите имя: ')
-        del_contact(who_need)
+        who_need = inputing()
+        replace_spaces_with_none(who_need)
+        del_contact(who_need[0], who_need[1], who_need[2])
     elif operation == 'к':
         whence = input('Из какого файла копировать?\n')
         print('\nКого копировать?\nПостарайтесь написать в точности как в справочнике.')
