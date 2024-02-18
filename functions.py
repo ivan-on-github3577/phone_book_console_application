@@ -48,7 +48,9 @@ def add_contact(name, phone, comment='-'):
 
 
 
-
+'''не срабатывает в отношении последнего контакта,
+   с предпоследним или любым другим - всё ок,
+   не могу понять почему так...'''
 def find_contact(name=None, phone=None, comment=None,
                  contact_only=True, path='phone book.txt'):
     with open (path, 'r', encoding='utf-8') as contacts:
