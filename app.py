@@ -29,8 +29,12 @@ while operation != 'в':
         del_contact(who_need)
     elif operation == 'к':
         whence = input('Из какого файла копировать?\n')
-        print('Кого копировать?\nПостарайтесь написать в точности как в справочнике.')
-        copyable_contact = inputing()
+        print('\nКого копировать?\nПостарайтесь написать в точности как в справочнике.')
+        print('Если не знаете или хотите пропустить пункт ввода - введите пробел.')
+        copyable_contact = list(inputing())
+        for i in range(len(copyable_contact)):
+            if copyable_contact[i] == ' ':
+                copyable_contact[i] = None
         copying_from_another(whence, copyable_contact[0],
                                      copyable_contact[1],
                                      copyable_contact[2])
