@@ -110,4 +110,4 @@ def inputing():
 
 def copying_from_another(whence, name=None, phone=None, comment=None):
     copyable_contact = find_contact(name, phone, comment, True, whence)
-    print(copyable_contact)
+    add_contact(copyable_contact[0], copyable_contact[1], copyable_contact[2])

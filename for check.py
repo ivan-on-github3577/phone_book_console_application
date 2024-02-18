@@ -17,6 +17,6 @@ from functions import *
 # теперь Маша предпоследняя и удалится
 # del_contact('Маша')
 
-copying_from_another('copyable phone_book.txt', 'Марина')
+# copying_from_another('copyable phone_book.txt', 'Марина')
 
 # render_contacts()
