@@ -14,8 +14,10 @@ while operation != 'в':
         print(f'Контакт {inputed[0]} добавлен.')
     elif operation == 'н':
         print('Кого ищем?\nПостарайтесь написать имя в точности как в справочнике.')
-        who_need = input('Введите имя: ')
-        print(*find_contact(who_need))
+        print('Если не знаете или хотите пропустить пункт ввода - введите пробел.')
+        who_need = inputing()
+        replace_spaces_with_none(who_need)
+        print(*find_contact(who_need[0], who_need[1], who_need[2]))
     elif operation == 'и':
         print('Кого изменить?\nПостарайтесь написать в точности как в справочнике.')
         who_need = inputing()
@@ -31,10 +33,8 @@ while operation != 'в':
         whence = input('Из какого файла копировать?\n')
         print('\nКого копировать?\nПостарайтесь написать в точности как в справочнике.')
         print('Если не знаете или хотите пропустить пункт ввода - введите пробел.')
-        copyable_contact = list(inputing())
-        for i in range(len(copyable_contact)):
-            if copyable_contact[i] == ' ':
-                copyable_contact[i] = None
+        copyable_contact = inputing()
+        replace_spaces_with_none(copyable_contact)
         copying_from_another(whence, copyable_contact[0],
                                      copyable_contact[1],
                                      copyable_contact[2])

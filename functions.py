@@ -103,8 +103,13 @@ def inputing():
     name = input('Введите имя: ')
     phone = input('Введите номер телефона: ')
     comment = input('Введите комментарий: ')
-    return (name, phone, comment)
+    return [name, phone, comment]
 
+
+def replace_spaces_with_none(list):
+    for i in range(len(list)):
+            if list[i] == ' ':
+                list[i] = None
 
 
 
