@@ -48,14 +48,12 @@ def add_contact(name, phone, comment='-'):
 
 
 
-'''не срабатывает в отношении последнего контакта,
-   с предпоследним или любым другим - всё ок,
-   не могу понять почему так...'''
+
 def find_contact(name=None, phone=None, comment=None,
                  contact_only=True, path='phone book.txt'):
     with open (path, 'r', encoding='utf-8') as contacts:
         contacts = get_list_of_list_contacts(contacts)
-        for contact_index in range(len(contacts)-1):
+        for contact_index in range(len(contacts)):
             current_contact = contacts[contact_index]
             for i in range(len(current_contact)):
                 if current_contact[i] == name or current_contact[i] == phone or current_contact[i] == comment:
