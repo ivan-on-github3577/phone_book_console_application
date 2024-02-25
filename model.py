@@ -21,6 +21,14 @@ def save_phone_book():
         file.write(data)
 
 
+'''общее понятие(не только для этого
+   приложения(программы) телефонного справочника):
+   одно нижнее подчёркивание в самом
+   начале названия функции означает,
+   что эту функцию мы будем использовать только
+   в этом файле(только в "model.py" в
+   данном случае)
+   \/ \/ \/ \/'''
 def _next_id():
     global phone_book
     return max(phone_book) + 1 if phone_book else 1
@@ -40,6 +48,10 @@ def find_contact(search_word: str) -> dict[int, list[str]]:
     return result
 
 
+'''эта функция сделана с аннотациями(какие типы данных
+   ожидаются на вход и какие типы данных ожидаются на выходе)
+   и документацией, с помощью "help(edit_contact)" или
+   "print(help(edit_contact))" их можно посмотреть извне'''
 def edit_contact(u_id: int, edited_contact: list[str]) -> str:
     '''
     Функция изменения контакта в телефонной книге
@@ -53,6 +65,8 @@ def edit_contact(u_id: int, edited_contact: list[str]) -> str:
         current_contact[i] = edited_contact[i] if edited_contact[i] else current_contact[i]
     phone_book[u_id] = current_contact
     return current_contact[0]
+# help(edit_contact)
+# print(help(edit_contact))
 
 
 def delete_contact(u_id: int) -> str:

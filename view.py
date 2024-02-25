@@ -16,7 +16,7 @@ def show_main_menu() -> int :
         print(text.choice_main_menu_error)
 
 
-def show_contacts(phone_book: dict[int, [str]], error_message: str):
+def show_contacts(phone_book: dict[int, list[str, str, str]], error_message: str):
     if phone_book:
         print('\n' + THEME * 71)
         for u_id, contact in phone_book.items():
