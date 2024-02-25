@@ -3,6 +3,12 @@ import text
 THEME = '*'
 
 
+class Confirm:
+    def confirm(self, message, confirm_message):
+        show_message(message)
+        return input_data(confirm_message).lower() == 'y'
+
+
 def show_main_menu() -> int :
     for i, item in enumerate(text.main_menu):
         if i:

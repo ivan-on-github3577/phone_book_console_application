@@ -32,6 +32,14 @@ input_search_word_for_delete = 'Введите слово для поиска к
 input_id_for_edit = 'Введите ID контакта, который хотите изменить: '
 input_id_for_delete = 'Введите ID контакта, который хотите удалить: '
 
+confirm_on_delete = 'Вы действительно хотите удалить контакт?'
+confirm_on_delete_accept = 'Удалить? (y/n)'
+
+exit_no_changes = 'Спасибо, досвидания.'
+exit_no_changes_no_confirm = 'Изменения не сохранены.'
+exit_no_changes_confirm = 'Изменения успешно сохранены.'
+exit_changes = 'Были внесены изменения!'
+exit_confirm = 'Сохранить? (y/n)'
 
 def new_contact_added_successful(name: str) -> str:
     return f'Контакт "{name}" успешно добавлен!'
@@ -47,3 +55,5 @@ def edit_contact_successful(name) -> str:
 
 def delete_contact_successful(name) -> str:
     return f'Контакт "{name}" успешно удалён!'
+
+
